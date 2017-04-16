@@ -1,0 +1,50 @@
+<html>
+	<head>
+		<title>这是我的外包</title>
+		<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+		<meta http-equiv="description" content="this is my page">
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		
+		<link id="lk" rel="stylesheet" type="text/css" href="">
+		<style type="text/css">
+		</style>
+		<script type="text/javascript">
+			window.onload = function () {
+				var oBtn = document.getElementById('btn1');
+				var oBtn2 = document.getElementById('btn2');
+				var oDiv = document.getElementById('div1');
+				var aCh = oDiv.getElementsByTagName('input');
+				oBtn.onclick = function () {
+					for(var i = 0; i < aCh.length; ++i){
+						aCh[i].checked = true;
+					}
+				};
+				oBtn2.onclick = function () {
+					for(var i = 0; i < aCh.length; ++i){
+						aCh[i].checked = ! aCh[i].checked;
+					}
+				};
+			};
+		</script>
+	</head>
+	<body>
+		<input id="btn1" type="button" value="全选" name="">
+		<input id="btn2" type="button" value="反选" name="">
+		<div id="div1">
+			<input type="checkbox" name=""><br>
+			<input type="checkbox" name=""><br>
+			<input type="checkbox" name=""><br>
+			<input type="checkbox" name=""><br>
+			<input type="checkbox" name=""><br>
+			<input type="checkbox" name=""><br>
+			<input type="checkbox" name=""><br>
+			<input type="checkbox" name=""><br>
+			<input type="checkbox" name=""><br>
+			<input type="checkbox" name=""><br>
+			<input type="checkbox" name=""><br>
+			<input type="checkbox" name=""><br>
+			<input type="checkbox" name=""><br>
+		</div>
+	</body>
+
+</html>

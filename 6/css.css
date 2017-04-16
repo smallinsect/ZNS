@@ -1,0 +1,10 @@
+div {
+	width: 100px;
+	height: 100px;
+	background: #ccc;
+	border: 1px solid black;
+}
+
+.box {
+	background: #555650;
+}

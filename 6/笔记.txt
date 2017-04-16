@@ -1,0 +1,78 @@
+ECMAScript:解释器、翻译 核心
+
+DOM Document Object Model	HTML document
+	操作HTML的能力
+
+BOM Browser Object Model	浏览器 window
+
+ECMA 几乎没有
+DOM 有一些操作不兼容
+BOM 没有兼容问题（完全不兼容）
+
+-------------------------------------------------------------------------------------
+
+变量
+	常见类型 number string boolean undefined object function
+
+NAN Not a Number 非数字
+
+a = '123ad';
+paserInt(a);//将a转换成数字
+
+var a = parseInt('abc');
+var b = parseInt('bcd');
+
+alert(a == b); //false HTML NaN和NaN不等
+
+alert(isNaN(a)); //true isNaN判断a是不是NaN 是true 否false
+
+var a = '3.5';
+parseInt(a);//3 转整数
+parseFloat(a);//3.5 转浮点数
+
+显示转换（强制类型转换）
+
+
+隐式类型转换
+var a = 5;
+var b - '5';
+alert(a == b);// true 先转换类型再比 隐式类型转换
+alert(a === b);// false 不转换，直接比
+
+var a='12';
+var b='6';
+alert(a-b);//6 先转换类型，再相减 隐式类型转换
+
++ 1、字符串链接 2、数字相加
+- 1、数字相减
+
+变量作用域（变量起作用范围）
+
+闭包
+function aaa(){	//父函数
+	var a=12;
+	function bbb () {	//子函数
+		alert(a);
+	}
+
+	bbb():	//子函数能使用父函数的变量
+}
+
+命名规范
+	1、可读性
+	2、规范性
+匈牙利命名法
+	1、类型前缀
+	2、首字母大写
+
+数组 		a 	Array 		aItems
+布尔值 		b 	Boolean 	bIsComplete
+浮点数 		f 	Float 		fPrice
+函数 		fn 	Function 	fnHandler
+整数 		i 	Integer 	iItemCount
+对象 		o 	Object 		oDiv1
+正则表达式 	re 	RegExp 		reEmailCheck
+字符串 		s 	String 		sUserName
+变体变量 	v 	Variant 	vAnything
+
+
