@@ -9,7 +9,7 @@
 	height: 160px;
 	left: 50px;
 	top: 50px;
-	/*overflow: hidden;*/
+	overflow: hidden;
 }
 #div1 ul {
 	position: absolute;
