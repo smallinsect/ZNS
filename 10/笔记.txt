@@ -1,0 +1,10 @@
+无缝滚动
+
+物体运动
+
+offsetLeft/offsetTop
+
+offsetWidth/offsetHeight
+
+
+

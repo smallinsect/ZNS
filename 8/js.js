@@ -80,5 +80,5 @@ window.onload = function () {
 		}
 		return 0;
 	});
-	alert(arr1);
+	// alert(arr1);
 };

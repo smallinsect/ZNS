@@ -1,0 +1,44 @@
+<html>
+<head>
+	<style type="text/css">
+/*		input
+		{
+			position:relative;
+		}*/
+		#div-pa{
+			border: 1px solid red; margin-top: 10px; margin-left: 10px;
+			position: relative;
+		}
+		#div1{
+			width: 50px;
+			height: 50px;
+			background: #ccc;
+			left: 10px;
+			/*top: 20px; */
+			/*position: static;*/
+			/*position: relative;*/
+			position: absolute;
+		}
+	</style>
+	<script type="text/javascript">
+		function setPositionAbsolute(){
+			document.getElementById("div1").style.position="absolute";
+			// document.getElementById("div1").style.top="5px";
+		}
+		function setPositionRelative(){
+			document.getElementById("div1").style.position="relative";
+			// document.getElementById("div1").style.top="20px";
+		}
+	</script>
+</head>
+<body>
+	<div id="div-pa">
+		<div id="div1" ></div>
+		<input type="button" value="11111111111111111111111111111111111" name=""><br>
+		<input type="button" value="11111111111111111111111111111111111" name=""><br>
+		<input type="button" onclick="setPositionAbsolute()" value="Set button position to be absolute" />
+		<input type="button" onclick="setPositionRelative()" value="Set button position to be relative" />
+	</div>
+
+</body>
+</html>
