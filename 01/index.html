@@ -1,0 +1,45 @@
+<html>
+	<head>
+		<title>这是我的外包</title>
+		<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+		<meta http-equiv="description" content="this is my page">
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		
+		<style type="text/css">
+			#div1 {width: 200px; height: 100px; background: #ccc; display: none;}
+			#div2 {width: 200px; height: 200px; background: red;}
+			#div3 {width: 100px; height: 100px; background: red;}
+		</style>
+		<script type="text/javascript">
+			function toGreen(){
+				document.getElementById('div3').style.width='200px';
+				document.getElementById('div3').style.height='200px';
+				document.getElementById('div3').style.background='green';
+			}
+			function toRed(){
+				document.getElementById('div3').style.width='100px';
+				document.getElementById('div3').style.height='100px';
+				document.getElementById('div3').style.background='red';
+			}
+		</script>
+	</head>
+	<body>
+		<!-- 这样写在chrome下面可以用，在firefox下面不能用 -->
+		<!-- -->
+		<input type="checkbox" onmouseover="div1.style.display='block';" onmouseout="div1.style.display='none';" name="">
+		<!-- 使用document-->
+		<input type="checkbox" name="" onmouseover="document.getElementById('div1').style.display='block';" onmouseout="document.getElementById('div1').style.display='none';">
+		<div id="div1">为了你的信息安全。。。。。</div><input type="button" value="按钮" name="">
+		<!-- 使用函数-->
+		<div id="div2" onmouseover="document.getElementById('div2').style.width='300px';
+		document.getElementById('div2').style.height='300px';
+		document.getElementById('div2').style.background='green';
+		"
+		onmouseout="document.getElementById('div2').style.width='200px';
+		document.getElementById('div2').style.height='200px';
+		document.getElementById('div2').style.background='red';"></div>
+
+		<div id="div3" onmouseover="toGreen()" onmouseout="toRed()"></div>
+	</body>
+
+</html>
