@@ -1,0 +1,14 @@
+#div1{
+	width: 200px;
+	height: 200px;
+	background: #ccc;
+}
+/* 父级没有定位 */
+#div2{
+	width: 100px;
+	height: 100px;
+	background: red;
+	position: absolute;
+	left: 50px;
+	top: 50px;
+}

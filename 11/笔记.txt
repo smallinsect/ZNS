@@ -1,0 +1,64 @@
+
+DOM 基础
+	什么是DOM
+	浏览器支持
+
+浏览器	document支持
+IE		10%
+Chrome	60%
+FF		99%
+
+节点	DOM
+标签	CSS
+元素	JS
+
+节点 字节点 父节点
+
+var oUl = document.getElementById('ul1');
+alert(oUl.childNodes.length);
+
+<ul id="ul1">
+	<li></li>
+	<li></li>
+	<li></li>
+</ul>
+
+7个孩子 因为他有自己的文本节点
+
+oUl.children.length
+oUl.children[i]
+
+oUl.parentNode
+Ul的父节点
+
+oUl.offsetParent
+
+DOM 节点
+	首尾节点
+		有兼容性问题
+		firstChild、fisrtElementChild
+		lastChild、lastElementChild
+	兄弟节点
+		有兼容性问题
+		nextSibling、nextElementSibling
+		previousSibling、previousElementSilbling
+
+
+元素属性操作
+	第一种：oDiv.style.display = 'block';
+	第二种：oDiv.style['display'] = 'block';
+	第三种：Dom方式
+
+DOM方式操作元素属性
+	获取：getAttribute(名称)
+	设置：setAttribute(名称，值)
+	删除：removerAttribute(名称)
+
+用className选择元素
+	如何用className选择元素
+		选出所有元素
+		通过className条件筛选
+	封装成函数
+
+
+
