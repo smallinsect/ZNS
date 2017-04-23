@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>onchange事件</title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		function myFunction () {
+			var oTxt = document.getElementById('fname');
+			oTxt.value = oTxt.value.toUpperCase();
+		}
+	</script>
+</head>
+<body>
+	请输入英文字母：<input type="text" id="fname" onchange="myFunction()" name="">
+	<p>当您离开输入字段时，会触发将输入文本转换为大写的函数</p>
+</body>
+</html>
