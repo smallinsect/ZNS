@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>13-DOM操作应用高级-1笔记</title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+	window.onload = function () {
+		var oTab = document.getElementById('tab1');
+		var oldColor = '';
+		// 隔行变色
+		for(var i = 0; i < oTab.tBodies[0].rows.length; ++i){
+			oTab.tBodies[0].rows[i].onmouseover = function () {
+				oldColor = this.style.background;
+				this.style.background = '#888';
+			};
+			oTab.tBodies[0].rows[i].onmouseout = function () {
+				this.style.background = oldColor;
+			};
+			if(i%2){
+				oTab.tBodies[0].rows[i].style.background = '#ccc';
+			}else{
+				oTab.tBodies[0].rows[i].style.background = '#aaa';
+			}
+		}
+		// 添加用户
+		var oName = document.getElementById('name');
+		var oAge = document.getElementById('age');
+		var oBtn = document.getElementById('btn');
+		var cnt = oTab.tBodies[0].rows.length+1;
+		oBtn.onclick = function () {
+			// 创建一行
+			var oRow = document.createElement('tr');
+			var oTd = document.createElement('td');
+			oTd.innerHTML = cnt++;
+			oRow.appendChild(oTd);
+
+			var oTd = document.createElement('td');
+			oTd.innerHTML = oName.value;
+			oRow.appendChild(oTd);
+
+			var oTd = document.createElement('td');
+			oTd.innerHTML = oAge.value;
+			oRow.appendChild(oTd);
+
+			var oTd = document.createElement('td');
+			oTd.innerHTML = '<a href="javascript: ;">删除</a>';
+			// 删除用户
+			oTd.getElementsByTagName('a')[0].onclick = function () {
+			// oTd.children[0].onclick = function () {
+				// this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode);
+				oTab.tBodies[0].removeChild(this.parentNode.parentNode);
+			};
+			oRow.appendChild(oTd);
+
+			oTab.tBodies[0].appendChild(oRow);
+		};
+
+		var oSrh = document.getElementById('srh');
+		var oBtnSrh = document.getElementById('btn-srh');
+		var oldColor = '';
+		oBtnSrh.onclick = function () {
+			// alert(oSrh.value);
+			for(var i = 0; i < oTab.tBodies[0].rows.length; ++i){
+				if(oTab.tBodies[0].rows[i].style.background == 'yellow'){
+					oTab.tBodies[0].rows[i].style.background = oldColor;
+				}
+				// alert(oTab.tBodies[0].rows[i].cells[1].innerHTML);
+				if(oTab.tBodies[0].rows[i].cells[1].innerHTML==oSrh.value){
+					oldColor = oTab.tBodies[0].rows[i].style.background;
+					oTab.tBodies[0].rows[i].style.background = 'yellow';
+				}
+			}
+		};
+		// alert(oTab.tBodies[0].rows[1].cells[1].innerHTML);
+	};
+	</script>
+</head>
+<body>
+	姓名：<input id="name" type="text" >
+	年龄：<input id="age" type="text" >
+	<input id="btn" type="button" value="添加" ><br>
+	输入：<input id="srh" type="text" >
+	<input id="btn-srh" type="button" value="搜索">
+	<table id="tab1" border="1" width="500px">
+		<thead>
+			<td>ID</td>
+			<td>姓名</td>
+			<td>年龄</td>
+			<td>删除</td>
+		</thead>
+		<tbody>
+			<tr>
+				<td>1</td>
+				<td>小昆虫</td>
+				<td>11</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>中昆虫</td>
+				<td>22</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>大昆虫</td>
+				<td>33</td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td>巨昆虫</td>
+				<td>44</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

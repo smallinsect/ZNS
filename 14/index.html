@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>14-DOM操作应用高级-2</title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+	window.onload = function () {
+		var oUl1 = document.getElementById('ul1');
+		var oUl2 = document.getElementById('ul2');
+		var oBtn = document.getElementById('btn');
+		var oBtn1 = document.getElementById('btn1');
+
+		oBtn.onclick = function () {
+			var oLi = oUl1.children[0];
+			// oUl1.removeChild(oLi);	//移除ul1中的第一个li
+			// appendChild 有两步操作1、先从原有父级上删掉 2、添加到新的父级上
+			oUl2.appendChild(oLi);	//将li添加到ul2的最后面
+		};
+		oBtn1.onclick = function () {
+			var oLi = oUl1.children[0];
+			oUl1.appendChild(oLi);
+		};
+	};
+	</script>
+</head>
+<body>
+	<ul id="ul1">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+	</ul>
+	<input id="btn" type="button" value="移动" >
+	<input id="btn1" type="button" value="循环" >
+	<ul id="ul2">
+	</ul>
+</body>
+</html>
