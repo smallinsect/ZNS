@@ -1,4 +1,58 @@
 <html>
-	<head></head>
-	<body></body>
+	<head>
+		<title>12-DOM操作</title>
+		<meta charset="utf-8">
+		<script type="text/javascript">
+			window.onload = function () {
+				var oTxt = document.getElementById('txt1');
+				var oBtn = document.getElementById('btn1');
+				var oUl = document.getElementById('ul1');
+				//	text输入的数据添加到ul中
+				// oBtn.onclick = function () {
+				// 	var oLi = document.createElement('li');
+				// 	oLi.innerHTML = oTxt.value;
+				// 	oUl.appendChild(oLi);
+				// 	oTxt.value = '';
+				// };
+				
+				// 将元素添加到头
+				oBtn.onclick = function () {
+					var oLi = document.createElement('li');
+					var aLi = oUl.getElementsByTagName('li');
+
+					oLi.innerHTML = oTxt.value;
+					oTxt.value = '';
+					if(aLi.length > 0){
+						oUl.insertBefore(oLi, aLi[0]);
+					}else{
+						oUl.appendChild(oLi);
+					}
+				};
+				var aA = oUl.getElementsByTagName('a');
+				for(var i = 0; i < aA.length; ++i){
+					aA[i].onclick = function () {
+						oUl.removeChild(this.parentNode);
+					};
+				}
+
+				var oFrag = document.createDocumentFragment();
+				for(var i = 0; i < 100000; ++i){
+					var oLi = document.createElement('li');
+
+					oFrag.appendChild(oLi);
+				}
+				oUl.appendChild(oFrag);
+			};
+		</script>
+	</head>
+	<body>
+		<input type="text" id="txt1" name="">
+		<input type="button" value="创建li" id="btn1" name="">
+		<ul id="ul1">
+			<li>111111111<a href="javascript: ;">删除</a></li>
+			<li>222222222<a href="javascript: ;">删除</a></li>
+			<li>333333333<a href="javascript: ;">删除</a></li>
+			<li>444444444<a href="javascript: ;">删除</a></li>
+		</ul>
+	</body>
 </html>
